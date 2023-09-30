@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Room Switches</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <section>
+
+        <div class="container">
+    
+            <div class="section">
+    
+                <h2>Light Controls</h2>
+    
+                <div class="row">
+                    <div class="col-6">
+                        <button onclick="toggleState('ceiling_light_1')" class="btn">
+                            <p id="ceiling_light_1">OFF</p>
+                            <span>Ceiling Light #01</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button onclick="toggleState('ceiling_light_2')" class="btn">
+                            <p id="ceiling_light_2">OFF</p>
+                            <span>Ceiling Light #02</span>
+                        </button>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-6">
+                        <button onclick="toggleState('strip_light_1')" class="btn">
+                            <p id="strip_light_1">OFF</p>
+                            <span>LED Strip #01</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button onclick="toggleState('strip_light_2')" class="btn">
+                            <p id="strip_light_2">OFF</p>
+                            <span>LED Strip #02</span>
+                        </button>
+                    </div>
+                </div>
+    
+            </div>
+    
+    
+            <div class="section">
+    
+                <h2>Fan Controls</h2>
+    
+                <div class="row">
+                    <div class="col-6">
+                        <button onclick="toggleState('fan_1')" class="btn">
+                            <p id="fan_1">OFF</p>
+                            <span>Fan #01</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button onclick="toggleState('fan_2')" class="btn">
+                            <p id="fan_2">OFF</p>
+                            <span>Fan #02</span>
+                        </button>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-6">
+                        <button onclick="toggleState('fan_3')" class="btn">
+                            <p id="fan_3">OFF</p>
+                            <span>Fan #03</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button onclick="toggleState('fan_4')" class="btn">
+                            <p id="fan_4">OFF</p>
+                            <span>Fan #04</span>
+                        </button>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-6">
+                        <button onclick="toggleState('fan_5')" class="btn">
+                            <p id="fan_5">OFF</p>
+                            <span>Fan #05</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button onclick="toggleState('fan_6')" class="btn">
+                            <p id="fan_6">OFF</p>
+                            <span>Fan #06</span>
+                        </button>
+                    </div>
+                </div>
+    
+            </div>
+    
+        </div>
+
+    </section>
+
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>
