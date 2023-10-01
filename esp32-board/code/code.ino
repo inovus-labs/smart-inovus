@@ -9,6 +9,7 @@ WiFiClient espClient;
 const char* ssid = "Cipher Den";
 const char* password = "Ak@152epv";
 
+
 const char ssl_cert[]  = \
   "-----BEGIN CERTIFICATE-----\n" \
   "MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/\n" \
@@ -43,15 +44,14 @@ const char ssl_cert[]  = \
   "-----END CERTIFICATE-----\n";
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(115200);
   Serial.println("Hello, ESP32!");
 
 
-  // We start by connecting to a WiFi network
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
+  
 
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
@@ -70,7 +70,7 @@ void setup() {
   bool connected = client.connect("ws://smart-inovus-server.glitch.me/");
 
   if (connected) {
-    Serial.println("Connected to Server");
+    Serial.println("Connected");
   } else {
     Serial.println("Connection failed.");
   }
@@ -83,4 +83,31 @@ void setup() {
 
 void loop() {
   client.poll();
+
+  if (WiFi.status() != WL_CONNECTED) {
+    
+    bool webSocketConnection = false;
+    
+    Serial.print("Reconnecting to WiFi...");
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+      delay(500);
+      Serial.print(".");
+    }
+
+
+    Serial.println("");
+
+    while (!webSocketConnection) {
+      bool connected = client.connect("ws://smart-inovus-server.glitch.me/");
+      if (connected) {
+        Serial.println("Connected");
+        webSocketConnection = true;
+      } else {
+        Serial.println("Connection failed.");
+      }
+      delay(2000);
+    }
+  
+  }
 }
