@@ -17,6 +17,11 @@ let circuit = {
     fan_6: false,   
 };
 
+// print the details of client handshake
+wss.on('headers', (headers, req) => {
+    console.log(headers);
+});
+
 wss.on('connection', (ws) => {
     
     console.log('A new client connected...');

@@ -15,7 +15,7 @@ let fan_6 = document.getElementById('fan_6');
 
 
 // Connect to the server
-let ws = new WebSocket('ws://localhost:3000');
+let ws = new WebSocket('wss://smart-inovus-server.glitch.me/');
 
 
 // When the connection is open
